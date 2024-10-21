@@ -1,0 +1,74 @@
+<html lang="pt-br" data-bs-theme="auto">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Renato Nogueira, Rodolfo, Yoanny">
+  <meta name="generator" content="SESMA">
+  <title>Loguin</title>
+
+  <meta name="theme-color" content="#712cf9">
+
+</head>
+
+<body>
+
+  <app-root></app-root>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('.data').mask('00/00/0000', { placeholder: "__/__/____" });
+      $('.cpf').mask('00000000000', { reverse: true, placeholder: "000.000.000-00" });
+    });
+  </script>
+
+  <script>
+    function alerta() {
+      // Cria o SweetAlert de confirmação
+      Swal.fire({
+        title: 'Deseja salvar as informações?',
+        showDenyButton: true,
+        confirmButtonText: 'Confirmar',
+        denyButtonText: `Não confirmar`,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Cria um novo SweetAlert com loading
+          Swal.fire({
+            title: 'Aguarde, computando seu voto...',
+            text: 'Por favor, não feche esta janela.',
+            icon: 'success',
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: () => {
+              Swal.showLoading();
+              const timer = Swal.getPopup().querySelector("b");
+              timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
+              }, 100);
+            },
+            willClose: () => {
+              clearInterval(timerInterval);
+            }
+          }).then(() => {
+            // Após o loading, realiza o redirecionamento
+            window.location.href = '/finalizado';
+          });
+        } else if (result.isDenied) {
+          Swal.fire('Você não concluiu sua votação!', '', 'info');
+        }
+      });
+    }
+
+  </script>
+
+
+</body>
+
+</html>
