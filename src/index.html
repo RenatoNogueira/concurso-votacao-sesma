@@ -31,12 +31,21 @@
 
   <script>
     function alerta() {
+      // Verifica se uma opção foi selecionada
+      const opcaoSelecionada = document.querySelector('input[name="opcao"]:checked');
+
+      if (!opcaoSelecionada) {
+        // Exibe o alerta caso nenhuma opção tenha sido selecionada
+        Swal.fire('Por favor, selecione um candidato antes de votar.', '', 'warning');
+        return; // Não continua o processo se não houver seleção
+      }
+
       // Cria o SweetAlert de confirmação
       Swal.fire({
         title: 'Deseja salvar as informações?',
         showDenyButton: true,
         confirmButtonText: 'Confirmar',
-        denyButtonText: `Não confirmar`,
+        denyButtonText: 'Não confirmar',
       }).then((result) => {
         if (result.isConfirmed) {
           // Cria um novo SweetAlert com loading
@@ -65,8 +74,8 @@
         }
       });
     }
-
   </script>
+
 
 
 </body>

@@ -8,8 +8,8 @@ import { autorizadoGuard } from './_guard/autorizado.guard';
 
 const routes: Routes = [
   { path: 'login', title: "Faça seu login", component: LoginComponent},
-  { path: 'votacao', component: VotacaoComponent, canActivate: [autorizadoGuard]},
-  { path: 'finalizado', component: FinalizadoComponent, canActivate: [autorizadoGuard]},
+  { path: 'votacao', component: VotacaoComponent},
+  { path: 'finalizado', component: FinalizadoComponent},
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: ErrorComponent},
 ];
