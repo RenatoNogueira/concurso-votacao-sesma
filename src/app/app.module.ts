@@ -10,6 +10,7 @@ import { VotacaoComponent } from './votacao/votacao.component';
 import { FinalizadoComponent } from './finalizado/finalizado.component';
 import { ErrorComponent } from './error/error.component';
 import { provideHttpClient } from '@angular/common/http';
+import { ResultadosComponent } from './resultados/resultados.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { provideHttpClient } from '@angular/common/http';
     LoginComponent,
     VotacaoComponent,
     FinalizadoComponent,
-    ErrorComponent
+    ErrorComponent,
+    ResultadosComponent
   ],
   imports: [
     BrowserModule,
