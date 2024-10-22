@@ -1,4 +1,4 @@
-<h3 align="center">Frente do sistema de votação da secretaria</h3>
+<h3 align="center">Frontdo sistema de votação da secretaria</h3>
 
 <h3 align="left">Conecte-se comigo:</h3>
 <p align="left">
