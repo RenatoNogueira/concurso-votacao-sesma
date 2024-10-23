@@ -1,13 +1,3 @@
-/* Ação do form no select*/
-.glass-effect {
-  background: rgba(233, 233, 233, 0.6);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(7.4px);
-  -webkit-backdrop-filter: blur(7.4px);
-  border: 1px solid rgba(192, 192, 192, 0.84);
-}
-
 ul {
   padding-left: 0;
 }

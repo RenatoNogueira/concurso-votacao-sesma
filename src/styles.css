@@ -1,9 +1,11 @@
 body {
+  display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   place-content: center;
 }
+
 
 .glass-effect {
   background: rgba(233, 233, 233, 0.6);
@@ -12,15 +14,4 @@ body {
   backdrop-filter: blur(7.4px);
   -webkit-backdrop-filter: blur(7.4px);
   border: 1px solid rgba(192, 192, 192, 0.84);
-}
-
-input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-
-}
-
-input[type=number] {
-  -moz-appearance: textfield;
-  appearance: textfield;
-
 }

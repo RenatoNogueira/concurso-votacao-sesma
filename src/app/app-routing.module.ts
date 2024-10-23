@@ -9,7 +9,7 @@ import { ResultadosComponent } from './resultados/resultados.component';
 
 const routes: Routes = [
   { path: 'login', title: "Faça seu login", component: LoginComponent},
-  { path: 'votacao', component: VotacaoComponent, canActivate: [autorizadoGuard]},
+  { path: 'votacao', component: VotacaoComponent},
   { path: 'finalizado', component: FinalizadoComponent, canActivate: [autorizadoGuard]},
   { path: 'resultados-votacao', component: ResultadosComponent},
   { path: '', redirectTo: '/login', pathMatch: 'full' },
