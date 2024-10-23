@@ -12,7 +12,7 @@ export class ServidorService {
   constructor(private http: HttpClient) { }
 
   obterServidor(cpf: string, dataNascimento: string): Observable<any> {
-    const url = `${this.apiUrl}/${cpf}/${dataNascimento}`;
+    const url = '${this.apiUrl}/${cpf}/${dataNascimento}';
     return this.http.get<any>(url).pipe(
       catchError(this.handleError)
     );
